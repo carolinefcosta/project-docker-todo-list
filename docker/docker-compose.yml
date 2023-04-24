@@ -7,8 +7,6 @@ services:
       - todoback
     environment:
       - FRONT_HOST=todofront
-    networks:
-      - todo-app
 
   todofront:
     build: ./todo-app/front-end/
@@ -18,8 +16,6 @@ services:
       - todoback
     environment:
       - REACT_APP_API_HOST=todoback
-    networks:
-      - todo-app
   
   todoback:
     build: ./todo-app/back-end/
