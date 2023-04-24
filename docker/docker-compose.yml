@@ -7,6 +7,8 @@ services:
       - todoback
     environment:
       - FRONT_HOST=todofront
+    networks:
+      - todo-app
   todofrontend:
     build: ./todo-app/front-end
     ports:
@@ -15,8 +17,16 @@ services:
       - todoback
     environment:
       - REACT_APP_API_HOST=todoback
+    networks:
+      - todo-app
   todobackend:
     build: ./todo-app/back-end
     ports:
       - 3001:3001
+    networks:
+      - todo-app
+
+networks:
+  todo-app:
+
       
