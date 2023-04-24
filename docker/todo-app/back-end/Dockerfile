@@ -1,4 +1,4 @@
-FROM node:14
+FROM node
 EXPOSE 3001:3001
 WORKDIR /app/back-end
 ADD node_modules.tar.gz ./
